@@ -2,7 +2,8 @@ import 'dart:html';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter/material.dart';
-import 'package:tela_login/controllers/login_controller.dart';
+import 'package:books/controllers/login_controller.dart';
+import 'package:books/widgets/home.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -30,6 +31,10 @@ class _LoginState extends State<Login> {
     var loginController =
         LoginController(telefoneController.text, senhaController.text);
     if (loginController.isValidLogin()) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => home()),
+      );
       print("Login Correto!!!");
       print("Telefone   : ${telefoneController.text}");
       print("Senha      : ${senhaController.text}");
