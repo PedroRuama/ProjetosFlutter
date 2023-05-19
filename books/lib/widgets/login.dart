@@ -10,6 +10,7 @@ class Login extends StatefulWidget {
   State<Login> createState() => _LoginState();
 }
 
+
 class _LoginState extends State<Login> {
   late TextEditingController telefoneController;
   late TextEditingController senhaController;
@@ -33,20 +34,47 @@ class _LoginState extends State<Login> {
     if (loginController.isValidLogin()) {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => home()),
+        MaterialPageRoute(builder: (context) => BooksApp()),
       );
       print("Login Correto!!!");
       print("Telefone   : ${telefoneController.text}");
       print("Senha      : ${senhaController.text}");
       print(" ");
     } else {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Login ou senha Incorretos'),
+            titleTextStyle: TextStyle(color: Colors.red, fontSize: 30),
+            content: Text('Por favor, tente novamente'),
+            actions: [
+              TextButton(onPressed: () => Navigator.pop(context, 'Ok'), 
+              child: Text('OK')),
+            ],
+          );
+        }
+
+      );
+      telefoneController.clear();
+      senhaController.clear();
       print("XXX Login incorreto XXX");
       print(" ");
+      
     }
   }
 
+ 
+
+
+
+
+
+
+
   Widget build(BuildContext context) {
     return Scaffold(
+       
         backgroundColor: Color.fromARGB(255, 230, 229, 228),
         body: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -59,6 +87,7 @@ class _LoginState extends State<Login> {
                 Container(
                   height: 600,
                   width: 500,
+                  
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.white,
@@ -78,7 +107,8 @@ class _LoginState extends State<Login> {
                             controller: telefoneController,
                             autofocus: true,
                             keyboardType: TextInputType.number,
-                            style: TextStyle(color: Colors.blue, fontSize: 30),
+                            style: TextStyle(color: Colors.black, fontSize: 30),
+                              
                             decoration: InputDecoration(
                               labelText: "Telefone do usuário", 
                               labelStyle: TextStyle(color: Colors.black)),
@@ -92,7 +122,7 @@ class _LoginState extends State<Login> {
                           autofocus: true,
                           obscureText: true,
                           keyboardType: TextInputType.text,
-                          style: TextStyle(color: Colors.blue, fontSize: 30),
+                          style: TextStyle(color: Colors.black, fontSize: 30),
                           decoration: InputDecoration(
                             labelText: "Senha do usuário",
                             labelStyle: TextStyle(color: Colors.black),
@@ -109,7 +139,7 @@ class _LoginState extends State<Login> {
                                 new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
                               ),
                               backgroundColor: MaterialStateProperty.all(
-                                Colors.red
+                                Colors.amber
                               )
                             ),
                             child: Text(

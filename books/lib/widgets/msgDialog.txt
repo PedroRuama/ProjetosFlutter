@@ -1,0 +1,26 @@
+showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: Text('Login ou senha Incorretos'),
+              content: Text('o campo login ou senha foi digitado incorretamente, por favor tente novamente'),
+              actions: [
+                TextButton(onPressed: () => Navigator.pop(context, 'Ok'), 
+                child: Text('OK')),
+              ],
+            );
+          }
+        );
+
+
+
+
+        AlertDialog(
+          title: Text('Login ou senha Incorretos'),
+          content: Text('o campo login ou senha foi digitado incorretamente, por favor tente novamente'),
+          actions: [
+            TextButton(onPressed: () => Navigator.pop(context, 'Ok'), 
+            child: Text('OK')),
+          ],
+          
+        );
