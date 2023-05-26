@@ -4,6 +4,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:slash_screen/SplashPage.dart';
+import 'package:slash_screen/home.dart';
 
 void main(){
   runApp (const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       routes: {
-        '/':(context) => const SplashPage();
+        '/':(context) => const SplashPage(),
         '/home': (context) => const HomePage(),
       },
     );
