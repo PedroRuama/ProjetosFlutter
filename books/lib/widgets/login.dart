@@ -47,7 +47,7 @@ class _LoginState extends State<Login> {
           return AlertDialog(
             title: Text('Login ou senha Incorretos'),
             titleTextStyle: TextStyle(color: Colors.red, fontSize: 30),
-            content: Text('Por favor, tente novamente'),
+            content: Text('Por favor, tente novamente.'),
             actions: [
               TextButton(onPressed: () => Navigator.pop(context, 'Ok'), 
               child: Text('OK')),
@@ -110,6 +110,7 @@ class _LoginState extends State<Login> {
                             style: TextStyle(color: Colors.black, fontSize: 30),
                               
                             decoration: InputDecoration(
+                              
                               labelText: "Telefone do usuário", 
                               labelStyle: TextStyle(color: Colors.black)),
                           ),

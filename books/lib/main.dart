@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Tela Login', //  O tema utilizado, possui alguns outros atributos a serem configurados como primarySwatch, brightness, primaryColor e accentColor entre outros. No exemplo usamos apenas um primarySwatch é definindo a classe Colors, que implementa internamente as especificações de cores do Material Design.
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(primarySwatch: Colors.amber),
       home: Login(), // a primeira tela do aplicativo 
 
 
