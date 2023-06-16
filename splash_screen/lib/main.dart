@@ -5,6 +5,7 @@
 import 'package:flutter/material.dart';
 import 'package:slash_screen/SplashPage.dart';
 import 'package:slash_screen/home.dart';
+import 'package:slash_screen/Tela_SB_MD.dart';
 
 void main(){
   runApp (const MyApp());
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/':(context) => const SplashPage(),
         '/home': (context) => const HomePage(),
+        '/Tela_SB_MD': (context) => const Tela_SB_MD(),
       },
     );
   }

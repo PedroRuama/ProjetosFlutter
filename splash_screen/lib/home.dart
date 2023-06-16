@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slash_screen/Tela_SB_MD.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -9,6 +10,14 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
+
+  void btnSnack_Dialog(){
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Tela_SB_MD()));
+  }
+
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -26,7 +35,33 @@ class _HomePageState extends State<HomePage> {
             child: Container(
               padding: const EdgeInsets.all(8),
               color: Colors.blue.shade100,
-              child: const Center(child: Text('Container 1')),
+              alignment: Alignment.center,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Tela SnackBar e MsgDialog'),
+                  ElevatedButton(
+                    onPressed: btnSnack_Dialog, 
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(
+                       new RoundedRectangleBorder(borderRadios: new BorderRadius.circular(30.0)),
+                      ),
+                      backgroundColor: MaterialStateProperty.all(Colors.blue),
+
+                    ),
+                    child: Text(
+                      "Ir para Tela",
+                      // style: TextStyle(),
+                    ),
+                    
+                    
+                    ),
+                  
+
+                ],
+
+              ),
             ),
           ),
           Container(
