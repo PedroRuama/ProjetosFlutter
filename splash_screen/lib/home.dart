@@ -40,13 +40,16 @@ class _HomePageState extends State<HomePage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('Tela SnackBar e MsgDialog'),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text('Tela SnackBar e MsgDialog'),
+                  ),
                   ElevatedButton(
                     onPressed: btnSnack_Dialog, 
                     style: ButtonStyle(
-                      shape: MaterialStateProperty.all(
-                       new RoundedRectangleBorder(borderRadios: new BorderRadius.circular(30.0)),
-                      ),
+                      // shape: MaterialStateProperty.all(
+                      //  new RoundedRectangleBorder(borderRadios: BorderRadius.circular(30.0)),
+                      // ),
                       backgroundColor: MaterialStateProperty.all(Colors.blue),
 
                     ),
