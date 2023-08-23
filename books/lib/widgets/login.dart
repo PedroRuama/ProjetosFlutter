@@ -48,6 +48,7 @@ class _LoginState extends State<Login> {
             title: Text('Login ou senha Incorretos'),
             titleTextStyle: TextStyle(color: Colors.red, fontSize: 30),
             content: Text('Por favor, tente novamente.'),
+            
             actions: [
               TextButton(onPressed: () => Navigator.pop(context, 'Ok'), 
               child: Text('OK')),
